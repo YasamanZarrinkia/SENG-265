@@ -1,0 +1,2 @@
+Error:../assignment_handout/tests/error_capped_groupby_distinct/input.csv:ticker has been capped at 20 distinct values
+Error: ../assignment_handout/tests/error_capped_groupby_distinct/input.csv:group-by argument ticker has high cardinality

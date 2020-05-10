@@ -1,0 +1,25 @@
+ $     python3 OLAP.py -h
+  
+ $     python3 OLAP.py --input input.csv > ./tests/param_noparams_countdefault/output.csv
+
+ $     python3 OLAP.py --input input.csv --count > ./tests/param_count/output.csv
+ 
+ $     python3 OLAP.py --input input.csv --max high > ./tests/param_max/output.csv
+ 
+ $     python3 OLAP.py --input input.csv --min low > ./tests/param_min/output.csv
+ 
+ $     python3 OLAP.py --input input.csv --mean close > ./tests/param_mean/output.csv
+
+ $     python3 OLAP.py --input input.csv --sum volume > ./tests/param_sum/output.csv
+
+$     python3 OLAP.py --input input.csv --sum not_a_field > ./tests/error_missing_field/output.csv 2> ./tests/error_missing_field/8.err
+ 
+ $     python3 OLAP.py --input input.csv --group-by industry --count --min open --max open --mean open --min high --max high --mean high --min low --max low --mean close --min close --max close --mean close > ./tests/error_groupby_arg_not_found/output.csv 2> ./tests/error_groupby_arg_not_found/9.err
+
+ $     python3 OLAP.py --input input.csv --group-by sector --count --min open close high low --max open close high low --mean open close high low > ./tests/param_groupby_simple/output.csv
+
+ $     python3 OLAP.py --input input.csv --group-by ticker --count --min open --max open --mean open --min high --max high --mean high --min low --max low --mean close --min close --max close --mean close > ./tests/param_groupby_all/output.csv
+
+ $     python3 OLAP.py --input ./tests/error_capped_aggregate_distinct/input.csv --max day_number > ./tests/error_capped_aggregate_distinct/output.csv 2> ./tests/error_capped_aggregate_distinct/n.err
+
+ $     python3 OLAP.py --input ./tests/error_capped_groupby_distinct/input.csv --group-by ticker > ./tests/error_capped_groupby_distinct/output.csv 2> ./tests/error_capped_groupby_distinct/n.err
